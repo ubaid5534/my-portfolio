@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+      }
+
+      .login-container {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #555;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        transition: border-color 0.3s;
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: #4ecdc4;
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 0.8rem;
+        background: linear-gradient(to right, #ff6b6b, #4ecdc4);
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      .login-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .forgot-password {
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      .forgot-password a {
+        color: #666;
+        text-decoration: none;
+      }
+
+      .forgot-password a:hover {
+        color: #4ecdc4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Welcome Back</h2>
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit" class="login-btn">Log In</button>
+        <div class="forgot-password">
+          <a href="#">Forgot Password?</a>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function handleLogin(event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Here you would typically send these credentials to your server
+        // For demo purposes, we'll just log to console
+        console.log("Login attempt:", { username, password });
+
+        // Example validation
+        if (username && password) {
+          alert("Login successful!");
+          // Redirect to dashboard or home page
+          // window.location.href = 'dashboard.html';
+        } else {
+          alert("Please fill in all fields");
+        }
+      }
+    </script>
+  </body>
+</html>
